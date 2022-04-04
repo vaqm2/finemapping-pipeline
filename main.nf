@@ -27,12 +27,12 @@ log.info """
 ============================================================================
 I B P _ F I N E M A P P I N G _ P I P E L I N E _ V 1 . 0 - N E X T F L O W
 ============================================================================
-Association Test                 : $params.assoc
-Sample Size                      : $params.n
-Output Prefix                    : $params.out
-Annotations                      : $params.annotation
-Weights                          : $params.weights
-LD Cache                         : $params.ld
+Association Test : $params.assoc
+Sample Size      : $params.n
+Output Prefix    : $params.out
+Annotations      : $params.annotation
+Weights          : $params.weights
+LD Cache         : $params.ld
 =============================================================================
 """
 
