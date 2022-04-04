@@ -36,8 +36,6 @@ LD Cache                         : $params.ld
 =============================================================================
 """
 
-}
-
 workflow {
 
     // Step 1: Munge sumstats and store in parquet format for PolyFun
