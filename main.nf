@@ -37,9 +37,10 @@ LD Cache         : $params.ld
 """
 
 process test {
-    """
+    shell:
+    '''
     echo "This is a test"
-    """
+    '''
 }
 
 // Step 1: Munge sumstats and store in parquet format for PolyFun
