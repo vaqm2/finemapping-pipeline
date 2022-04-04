@@ -14,8 +14,6 @@ def help_msg() {
     --assoc <saige_results.assoc> [A file of association test results from the SAIGE mixed linear model analysis]
     --n <10000> [Sample size of the association analysis]
     --help [Prints this message]
-    --info <0.6> [Filter for imputation INFO scores]
-    --maf <0.001> [Filter for minor allele frequency of SNPs]
     --out <my_out_prefix> [Prefix for output files]
     """
 }
