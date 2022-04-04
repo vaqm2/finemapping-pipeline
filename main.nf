@@ -49,7 +49,7 @@ process munge_sumstats {
         path("${out}_munged.parquet") into sumstats_munged_ch
     script:
         """
-        python munge_polyfun_sumstats.py \
+        python ./munge_polyfun_sumstats.py \
             --sumstats $sumstats \
             --n $N \
             --out ${out}_munged.parquet
@@ -81,7 +81,7 @@ process compute_h2_L2_calc_LD {
 
     script:
         """
-        python polyfun.py \
+        python ./polyfun.py \
             --compute-h2-L2 \
             --compute-ldscores \
             --output-prefix $out \
@@ -112,7 +112,7 @@ process reestimate_snp_h2 {
         path("${out}.*.snpvar_constrained.gz")
     script:
         """
-        python polyfun.py \
+        python ./polyfun.py \
             --compute-h2-bins \
             --output-prefix $out \
             --sumstats $munged_sumstats \
