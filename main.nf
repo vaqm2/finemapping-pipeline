@@ -1,8 +1,11 @@
 #!/usr/bin/env nextflow
 
+nextflow.enable.dsl = 2
 import groovy.json.JsonSlurper
 
-nextflow.enable.dsl = 2
+include { munge_sumstats } from './modules/munge_sumstats.nf'
+include { compute_h2_L2_calc_ld } from './modules/compute_h2_L2_calc_ld.nf'
+include { reestimate_snp_h2 } from './reestimate_snp_h2.nf'
 
 def help_msg() {
     log.info """
@@ -36,93 +39,54 @@ LD Cache         : $params.ld
 =============================================================================
 """
 
-process test {
-    shell:
-    '''
-    echo "This is a test"
-    '''
+String annotations = new File(params.annotation).text
+String weights = new File(params.weights).text
+def annotations_dict = new JsonSlurper().parseText(annotations)
+def weights_dict = new JsonSlurper().parseText(weights)
+annotations_ch = Channel.of(1..22) | map {
+    a -> [file(annotations_dict[a.toString()]."ann").getBaseName(),
+    annotations_dict[a.toString()]."ann",
+    annotations_dict[a.toString()]."ld",
+    annotations_dict[a.toString()]."m"
+    ]
+}
+weights_ch = Channel.of(1..22) | map {
+    a -> [file(annotations_dict[a.toString()]).getBaseName(),
+    annotations_dict[a.toString()]
+    ]
 }
 
-// Step 1: Munge sumstats and store in parquet format for PolyFun
+workflow {
 
-process munge_sumstats {
-    label 'low_mem'
-    input:
-        path sumstats from Channel.fromPath(params.assoc)
-        val N from Channel.of(params.n)
-        val out from Channel.of(params.out)
-        path munge_script from Channel.of(params.munge_sumstats_script)
-    output:
-        path("${out}_munged.parquet") into sumstats_munged_ch
-    script:
-        """
-        python ./munge_polyfun_sumstats.py \
-            --sumstats $sumstats \
-            --n $N \
-            --out ${out}_munged.parquet
-        """
-}
+    // Step 1: Munge sumstats and store in parquet format for PolyFun
+
+    Channel.of(params.assoc) \
+    | combine(Channel.of(params.n)) \
+    | combine(Channel.of(params.munge_sumstats_script)) \
+    | munge_sumstats \
+    | set { sumstats_munged_ch }
 
 /* Steps 2 & 3: Calculate per SNP h2 using L2-regularized S-LDSC, 
 partition SNPs into bins and compute LD scores per bin */
 
-process compute_h2_L2_calc_LD {
-    label 'big_mem'
-    input:
-        path polyfun_script from Channel.of(params.polyfun_script)
-        val out from Channel.of(params.out)
-        path munged_sumstats from sumstats_munged_ch
-        val annotation_files_prefix from Channel.of(params.annotation)
-        val weight_files_prefix from Channel.of(params.weights)
-        val ld_dir from Channel.of(params.ld)
-        path annotation_files from Channel.fromPath("${params.annotation}.*")
-        path weight_files from Channel.fromPath("${params.weights}.*")
-        path ld_files from Channel.fromPath(params.ld)
-    output:
-        path("${out}.annot_coeff_ridge.*.txt") into bin_ch
-        path("${out}.*.snpvar_ridge_constrained.gz") into bin_ch
-        path("${out}.*.snpvar_ridge.gz") into bin_ch
-        path("${out}.*.l2.M") into bin_ch
-        path("${out}.*.bins.parquet") into bin_ch
-        path("${out}.*.l2.ldscore.parquet") into bin_ch
+    Channel.of(1..22) \
+    | combine(annotations_ch, by: 0) \
+    | combine(weights_ch, by: 0) \
+    | combine(Channel.of(params.ld)) \
+    | combine(Channel.of(params.polyfun_script)) \
+    | combine(Channel.out(params.out)) \
+    | combine(sumstats_munged_ch) \
+    | combine(Channel.fromPath("${params.ld}/*").collect()) \
+    | compute_h2_L2_calc_ld
+    | set { per_snp_h2_bin_ld_ch }
 
-    script:
-        """
-        python ./polyfun.py \
-            --compute-h2-L2 \
-            --compute-ldscores \
-            --output-prefix $out \
-            --sumtats $munged_sumstats \
-            --ref-ld-chr ${annotation_file_prefix}. \
-            --w-ld-chr ${weight_file_prefix}. \
-            --ld-wind-kb 1000 \
-            --ld-ukb \
-            --ld-dir $ld_dir \
-            --allow-missing
-        """
-}
-
- /* Step 4: Re-calculate per SNP h2 using S-LDSC to use as priors for functional finemapping
+/* Step 4: Re-calculate per SNP h2 using S-LDSC to use as priors for functional finemapping
 Write SNP prior weights for finemapping to launch directory */
 
-process reestimate_snp_h2 {
-    label 'mod_mem'
-    publishDir launchDir
-    input:
-        path polyfun_script from Channel.of(params.polyfun_script)
-        val out from Channel.of(params.out)
-        path munged_sumstats from sumstats_munged_ch
-        val weight_file_prefix from Channel.of(params.weights)
-        path weight_files from Channel.fromPath("${params.weights}.*")
-        path step2_outputs from bin_ch
-    output:
-        path("${out}.*.snpvar_constrained.gz")
-    script:
-        """
-        python ./polyfun.py \
-            --compute-h2-bins \
-            --output-prefix $out \
-            --sumstats $munged_sumstats \
-            --w-ld-chr ${weight_file_prefix}.
-        """
+    Channel.of(params.polyfun_script) \
+    | combine(Channel.of(params.out)) \
+    | combine(sumstats_munged_ch) \
+    | combine(Channel.of(params.weights)) \
+    | combine(Channel.fromPath("${params.weights}.*").collect()) \
+    | combine(per_snp_h2_ld_ch)
 }
