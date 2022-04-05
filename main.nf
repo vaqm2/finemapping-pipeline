@@ -90,6 +90,6 @@ workflow {
     | combine(sumstats_munged_ch) \
     | combine(Channel.of(params.weights)) \
     | combine(Channel.fromList(weights_list).collect()) \
-    | combine(per_snp_h2_ld_ch) \
+    | combine(per_snp_h2_bin_ld_ch) \
     | reestimate_snp_h2
 }
