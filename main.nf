@@ -30,12 +30,12 @@ log.info """
 ============================================================================
 I B P _ F I N E M A P P I N G _ P I P E L I N E _ V 1 . 0 - N E X T F L O W
 ============================================================================
-Association Test : $params.assoc
-Sample Size      : $params.n
-Output Prefix    : $params.out
-Annotations      : $params.annotation
-Weights          : $params.weights
-LD Cache         : $params.ld
+Summary Stats : $params.assoc
+Sample Size   : $params.n
+Output Prefix : $params.out
+Annotations   : $params.annotation
+Weights       : $params.weights
+LD Cache      : $params.ld
 =============================================================================
 """
 
@@ -51,8 +51,8 @@ annotations_ch = Channel.of(1..22) | map {
     ]
 }
 weights_ch = Channel.of(1..22) | map {
-    a -> [file(annotations_dict[a.toString()]).getBaseName(),
-    annotations_dict[a.toString()]
+    a -> [file(weights_dict[a.toString()]).getBaseName(),
+    weights_dict[a.toString()]
     ]
 }
 
@@ -60,7 +60,6 @@ def weights_list = []
 weights_dict.each {key, value -> weight_list.add(value) }
 
 workflow {
-
     // Step 1: Munge sumstats and store in parquet format for PolyFun
 
     Channel.of(params.assoc) \

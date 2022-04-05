@@ -1,134 +1,112 @@
 {
     "1": {
-        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.1.l2.ldscore.parquet",
-        "wt" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/weights.UKB.1.l2.ldscore.parquet",
-        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.1.annot.parquet",
-        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.1.l2.M"
+        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.1.l2.ldscore.parquet",
+        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.1.annot.parquet",
+        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.1.l2.M"
     },
     "2": {
-        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.2.l2.ldscore.parquet",
-        "wt" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/weights.UKB.2.l2.ldscore.parquet",
-        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.2.annot.parquet",
-        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.2.l2.M"
+        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.2.l2.ldscore.parquet",
+        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.2.annot.parquet",
+        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.2.l2.M"
     },
     "3": {
-        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.3.l2.ldscore.parquet",
-        "wt" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/weights.UKB.3.l2.ldscore.parquet",
-        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.3.annot.parquet",
-        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.3.l2.M"
+        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.3.l2.ldscore.parquet",
+        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.3.annot.parquet",
+        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.3.l2.M"
     },
     "4": {
-        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.4.l2.ldscore.parquet",
-        "wt" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/weights.UKB.4.l2.ldscore.parquet",
-        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.4.annot.parquet",
-        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.4.l2.M"
+        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.4.l2.ldscore.parquet",
+        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.4.annot.parquet",
+        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.4.l2.M"
     },
     "5": {
-        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.5.l2.ldscore.parquet",
-        "wt" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/weights.UKB.5.l2.ldscore.parquet",
-        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.5.annot.parquet",
-        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.5.l2.M"
+        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.5.l2.ldscore.parquet",
+        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.5.annot.parquet",
+        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.5.l2.M"
     },
     "6": {
-        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.6.l2.ldscore.parquet",
-        "wt" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/weights.UKB.6.l2.ldscore.parquet",
-        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.6.annot.parquet",
-        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.6.l2.M"
+        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.6.l2.ldscore.parquet",
+        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.6.annot.parquet",
+        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.6.l2.M"
     },
     "7": {
-        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.7.l2.ldscore.parquet",
-        "wt" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/weights.UKB.7.l2.ldscore.parquet",
-        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.7.annot.parquet",
-        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.7.l2.M"
+        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.7.l2.ldscore.parquet",
+        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.7.annot.parquet",
+        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.7.l2.M"
     },
     "8": {
-        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.8.l2.ldscore.parquet",
-        "wt" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/weights.UKB.8.l2.ldscore.parquet",
-        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.8.annot.parquet",
-        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.8.l2.M"
+        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.8.l2.ldscore.parquet",
+        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.8.annot.parquet",
+        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.8.l2.M"
     },
     "9": {
-        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.9.l2.ldscore.parquet",
-        "wt" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/weights.UKB.9.l2.ldscore.parquet",
-        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.9.annot.parquet",
-        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.9.l2.M"
+        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.9.l2.ldscore.parquet",
+        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.9.annot.parquet",
+        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.9.l2.M"
     },
     "10": {
-        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.10.l2.ldscore.parquet",
-        "wt" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/weights.UKB.10.l2.ldscore.parquet",
-        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.10.annot.parquet",
-        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.10.l2.M"
+        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.10.l2.ldscore.parquet",
+        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.10.annot.parquet",
+        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.10.l2.M"
     },
     "11": {
-        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.11.l2.ldscore.parquet",
-        "wt" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/weights.UKB.11.l2.ldscore.parquet",
-        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.11.annot.parquet",
-        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.11.l2.M"
+        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.11.l2.ldscore.parquet",
+        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.11.annot.parquet",
+        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.11.l2.M"
     },
     "12": {
-        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.12.l2.ldscore.parquet",
-        "wt" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/weights.UKB.12.l2.ldscore.parquet",
-        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.12.annot.parquet",
-        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.12.l2.M"
+        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.12.l2.ldscore.parquet",
+        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.12.annot.parquet",
+        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.12.l2.M"
     },
     "13": {
-        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.13.l2.ldscore.parquet",
-        "wt" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/weights.UKB.13.l2.ldscore.parquet",
-        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.13.annot.parquet",
-        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.13.l2.M"
+        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.13.l2.ldscore.parquet",
+        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.13.annot.parquet",
+        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.13.l2.M"
     },
     "14": {
-        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.14.l2.ldscore.parquet",
-        "wt" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/weights.UKB.1.l2.ldscore.parquet",
-        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.1.annot.parquet",
-        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.1.l2.M"
+        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.14.l2.ldscore.parquet",
+        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.1.annot.parquet",
+        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.1.l2.M"
     },
     "15": {
-        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.15.l2.ldscore.parquet",
-        "wt" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/weights.UKB.15.l2.ldscore.parquet",
-        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.15.annot.parquet",
-        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.15.l2.M"
+        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.15.l2.ldscore.parquet",
+        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.15.annot.parquet",
+        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.15.l2.M"
     },
     "16": {
-        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.16.l2.ldscore.parquet",
-        "wt" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/weights.UKB.16.l2.ldscore.parquet",
-        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.16.annot.parquet",
-        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.16.l2.M"
+        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.16.l2.ldscore.parquet",
+        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.16.annot.parquet",
+        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.16.l2.M"
     },
     "17": {
-        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.17.l2.ldscore.parquet",
-        "wt" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/weights.UKB.17.l2.ldscore.parquet",
-        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.17.annot.parquet",
-        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.17.l2.M"
+        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.17.l2.ldscore.parquet",
+        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.17.annot.parquet",
+        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.17.l2.M"
     },
     "18": {
-        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.18.l2.ldscore.parquet",
-        "wt" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/weights.UKB.18.l2.ldscore.parquet",
-        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.18.annot.parquet",
-        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.18.l2.M"
+        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.18.l2.ldscore.parquet",
+        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.18.annot.parquet",
+        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.18.l2.M"
     },
     "19": {
-        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.19.l2.ldscore.parquet",
-        "wt" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/weights.UKB.19.l2.ldscore.parquet",
-        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.19.annot.parquet",
-        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.19.l2.M"
+        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.19.l2.ldscore.parquet",
+        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.19.annot.parquet",
+        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.19.l2.M"
     },
     "20": {
-        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.20.l2.ldscore.parquet",
-        "wt" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/weights.UKB.20.l2.ldscore.parquet",
-        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.20.annot.parquet",
-        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.20.l2.M"
+        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.20.l2.ldscore.parquet",
+        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.20.annot.parquet",
+        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.20.l2.M"
     },
     "21": {
-        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.21.l2.ldscore.parquet",
-        "wt" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/weights.UKB.21.l2.ldscore.parquet",
-        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.21.annot.parquet",
-        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.21.l2.M"
+        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.21.l2.ldscore.parquet",
+        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.21.annot.parquet",
+        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.21.l2.M"
     },
     "22": {
-        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.22.l2.ldscore.parquet",
-        "wt" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/weights.UKB.22.l2.ldscore.parquet",
-        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.22.annot.parquet",
-        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2.2.UKBB/baselineLF2.2.UKB.22.l2.M"
+        "ld" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.22.l2.ldscore.parquet",
+        "ann" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.22.annot.parquet",
+        "m" : "/faststorage/jail/project/cross_disorder_2/data/baselineLF2_2_UKBB/baselineLF2_2_UKB.22.l2.M"
     }
 }
