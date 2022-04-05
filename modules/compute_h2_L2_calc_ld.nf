@@ -17,8 +17,8 @@ process compute_h2_L2_calc_ld {
         path(polyfun_script),
         val(out),
         path(munged_sumstats),
-        file(ld_files)
-        
+        path(ld_files)
+
     output:
         tuple path("${out}.annot_coeff_ridge.${chr}.txt"), 
         path("${out}.${chr}.snpvar_ridge_constrained.gz"),
