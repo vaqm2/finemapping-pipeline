@@ -77,7 +77,7 @@ workflow {
     | combine(weights_ch, by: 0) \
     | combine(Channel.of(params.ld)) \
     | combine(Channel.of(params.polyfun_script)) \
-    | combine(Channel.out(params.out)) \
+    | combine(Channel.of(params.out)) \
     | combine(sumstats_munged_ch) \
     | combine(Channel.fromPath("${params.ld}/*").collect()) \
     | compute_h2_L2_calc_ld \
