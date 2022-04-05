@@ -59,7 +59,7 @@ weights_ch = Channel.of(1..22) | map {
     ]
 }
 
-weights_dict.each { key, value -> weight_list.add(value) }
+weights_dict.each { key, value -> weights_list.add(value) }
 
 workflow {
     // Step 1: Munge sumstats and store in parquet format for PolyFun
