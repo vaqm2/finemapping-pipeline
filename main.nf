@@ -44,6 +44,7 @@ String weights       = new File(params.weights).text
 def annotations_dict = new JsonSlurper().parseText(annotations)
 def weights_dict     = new JsonSlurper().parseText(weights)
 def weights_list     = []
+ld_files_ch          = Channel.fromPath("$params.ld/*").collect()
 
 annotations_ch = Channel.of(1..22) | map {
     a -> [file(annotations_dict[a.toString()]."ann").getBaseName(),
@@ -59,6 +60,7 @@ weights_ch = Channel.of(1..22) | map {
     ]
 }
 
+weight_file_prefix = file(weights_dict[1.toString()]).getBaseName()
 weights_dict.each { key, value -> weights_list.add(value) }
 
 workflow {
@@ -81,9 +83,9 @@ workflow {
     | combine(Channel.of(params.polyfun_script)) \
     | combine(Channel.of(params.out)) \
     | combine(sumstats_munged_ch) \
-    | combine(Channel.fromPath("${params.ld}/*").collect()) \
+    | combine(ld_files_ch) \
     | compute_h2_L2_calc_ld \
-    | set { per_snp_h2_bin_ld_ch }
+    | set { per_snp_h2_bin_ld_ch }.collect()
 
     /* Step 4: Re-calculate per SNP h2 using S-LDSC to use as priors for functional finemapping 
     Write SNP prior weights for finemapping to launch directory */
@@ -91,8 +93,8 @@ workflow {
     Channel.of(params.polyfun_script) \
     | combine(Channel.of(params.out)) \
     | combine(sumstats_munged_ch) \
-    | combine(Channel.of(params.weights)) \
+    | combine(Channel.of(weight_file_prefix)) \
     | combine(Channel.fromList(weights_list).collect()) \
-    | combine(per_snp_h2_bin_ld_ch.collect()) \
+    | combine(per_snp_h2_bin_ld_ch) \
     | reestimate_snp_h2
 }
