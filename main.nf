@@ -3,7 +3,7 @@
 nextflow.enable.dsl = 2
 import groovy.json.JsonSlurper
 
-include { munge_sumstats } from './modules/munge_sumstats.nf'
+include { munge_sumstats } from './modules/munge_sumstats.nf' 
 include { compute_h2_L2_calc_ld } from './modules/compute_h2_L2_calc_ld.nf'
 include { reestimate_snp_h2 } from './reestimate_snp_h2.nf'
 
@@ -43,6 +43,7 @@ String annotations   = new File(params.annotation).text
 String weights       = new File(params.weights).text
 def annotations_dict = new JsonSlurper().parseText(annotations)
 def weights_dict     = new JsonSlurper().parseText(weights)
+def weights_list     = []
 
 annotations_ch = Channel.of(1..22) | map {
     a -> [file(annotations_dict[a.toString()]."ann").getBaseName(),
@@ -58,8 +59,7 @@ weights_ch = Channel.of(1..22) | map {
     ]
 }
 
-def weights_list = []
-weights_dict.each {key, value -> weight_list.add(value) }
+weights_dict.each { key, value -> weight_list.add(value) }
 
 workflow {
     // Step 1: Munge sumstats and store in parquet format for PolyFun
@@ -70,8 +70,7 @@ workflow {
     | munge_sumstats \
     | set { sumstats_munged_ch }
 
-    /* Steps 2 & 3: Calculate per SNP h2 using L2-regularized S-LDSC, 
-    partition SNPs into bins and compute LD scores per bin */
+    // Steps 2 & 3: Calculate per SNP h2 using L2-regularized S-LDSC, partition SNPs into bins and compute LD scores per bin 
 
     Channel.of(1..22) \
     | combine(annotations_ch, by: 0) \
@@ -84,8 +83,7 @@ workflow {
     | compute_h2_L2_calc_ld \
     | set { per_snp_h2_bin_ld_ch }
 
-    /* Step 4: Re-calculate per SNP h2 using S-LDSC to use as priors for functional finemapping
-    Write SNP prior weights for finemapping to launch directory */
+    // Step 4: Re-calculate per SNP h2 using S-LDSC to use as priors for functional finemapping Write SNP prior weights for finemapping to launch directory
 
     Channel.of(params.polyfun_script) \
     | combine(Channel.of(params.out)) \

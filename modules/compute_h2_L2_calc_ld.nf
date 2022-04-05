@@ -4,19 +4,21 @@ nextflow.enable.dsl = 2
 
 process compute_h2_L2_calc_ld {
     label 'big_mem'
+
     input:
-        tuple val chr,
-        val annotation_files_prefix,
-        path annotations_file,
-        path ld_file,
-        path metrics_file,
-        val weight_files_prefix,
-        path weights_file,
-        val ld_dir,
-        path polyfun_script,
-        val out,
-        path munged_sumstats,
-        file ld_files
+        tuple val(chr),
+        val(annotation_files_prefix),
+        path(annotations_file),
+        path(ld_file),
+        path(metrics_file),
+        val(weight_files_prefix),
+        path(weights_file),
+        val(ld_dir),
+        path(polyfun_script),
+        val(out),
+        path(munged_sumstats),
+        file(ld_files)
+        
     output:
         tuple path("${out}.annot_coeff_ridge.${chr}.txt"), 
         path("${out}.${chr}.snpvar_ridge_constrained.gz"),
