@@ -5,7 +5,7 @@ nextflow.enable.dsl = 2
 process compute_h2_L2_calc_ld {
     label 'big_mem'
     input:
-    tuple val chr,
+        tuple val chr,
         val annotation_files_prefix,
         path annotations_file,
         path ld_file,
@@ -18,12 +18,12 @@ process compute_h2_L2_calc_ld {
         path munged_sumstats,
         file ld_files
     output:
-        tuple path "${out}.annot_coeff_ridge.${chr}.txt", 
-            path "${out}.${chr}.snpvar_ridge_constrained.gz",
-            path "${out}.${chr}.snpvar_ridge.gz",
-            path "${out}.${chr}.l2.M",
-            path "${out}.${chr}.bins.parquet",
-            path "${out}.${chr}.l2.ldscore.parquet"
+        tuple path("${out}.annot_coeff_ridge.${chr}.txt"), 
+        path("${out}.${chr}.snpvar_ridge_constrained.gz"),
+        path("${out}.${chr}.snpvar_ridge.gz"),
+        path("${out}.${chr}.l2.M"),
+        path("${out}.${chr}.bins.parquet"),
+        path("${out}.${chr}.l2.ldscore.parquet")
 
     script:
         """

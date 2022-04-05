@@ -39,10 +39,11 @@ LD Cache      : $params.ld
 =============================================================================
 """
 
-String annotations = new File(params.annotation).text
-String weights = new File(params.weights).text
+String annotations   = new File(params.annotation).text
+String weights       = new File(params.weights).text
 def annotations_dict = new JsonSlurper().parseText(annotations)
-def weights_dict = new JsonSlurper().parseText(weights)
+def weights_dict     = new JsonSlurper().parseText(weights)
+
 annotations_ch = Channel.of(1..22) | map {
     a -> [file(annotations_dict[a.toString()]."ann").getBaseName(),
     annotations_dict[a.toString()]."ann",
@@ -50,6 +51,7 @@ annotations_ch = Channel.of(1..22) | map {
     annotations_dict[a.toString()]."m"
     ]
 }
+
 weights_ch = Channel.of(1..22) | map {
     a -> [file(weights_dict[a.toString()]).getBaseName(),
     weights_dict[a.toString()]
