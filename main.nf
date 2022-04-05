@@ -66,6 +66,7 @@ workflow {
 
     Channel.of(params.assoc) \
     | combine(Channel.of(params.n)) \
+    | combine(Channel.of(params.out)) \
     | combine(Channel.of(params.munge_sumstats_script)) \
     | munge_sumstats \
     | set { sumstats_munged_ch }
