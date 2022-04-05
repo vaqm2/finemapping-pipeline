@@ -5,7 +5,7 @@ import groovy.json.JsonSlurper
 
 include { munge_sumstats } from './modules/munge_sumstats.nf' 
 include { compute_h2_L2_calc_ld } from './modules/compute_h2_L2_calc_ld.nf'
-include { reestimate_snp_h2 } from './reestimate_snp_h2.nf'
+include { reestimate_snp_h2 } from './modules/reestimate_snp_h2.nf'
 
 def help_msg() {
     log.info """
