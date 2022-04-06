@@ -34,8 +34,8 @@ process compute_h2_L2_calc_ld {
             --compute-ldscores \
             --output-prefix $out \
             --sumtats $munged_sumstats \
-            --ref-ld-chr ${annotation_file_prefix}. \
-            --w-ld-chr ${weight_file_prefix}. \
+            --ref-ld-chr ${annotation_files_prefix}. \
+            --w-ld-chr ${weight_files_prefix}. \
             --ld-wind-kb 1000 \
             --ld-ukb \
             --ld-dir $ld_dir \
