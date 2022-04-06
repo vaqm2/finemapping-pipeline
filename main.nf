@@ -39,29 +39,20 @@ LD Cache      : $params.ld
 =============================================================================
 """
 
-String annotations   = new File(params.annotation).text
-String weights       = new File(params.weights).text
-def annotations_dict = new JsonSlurper().parseText(annotations)
-def weights_dict     = new JsonSlurper().parseText(weights)
-def weights_list     = []
-ld_files_ch          = Channel.fromPath("$params.ld/*").collect()
-
-annotations_ch = Channel.of(1..22) | map {
-    a -> [file(annotations_dict[a.toString()]."ann").getBaseName(),
-    annotations_dict[a.toString()]."ann",
-    annotations_dict[a.toString()]."ld",
-    annotations_dict[a.toString()]."m"
-    ]
-}
-
 weights_ch = Channel.of(1..22) | map {
-    a -> [file(weights_dict[a.toString()]).getBaseName(),
-    weights_dict[a.toString()]
+    a -> [a, "${params.weights}.${a}.l2.ldscore.parquet"]
+}
+
+weight_file_ch  = Channel.fromPath("${params.weights}.*").collect()
+annotations_ch = Channel.of(1..22) | map {
+    a -> [a,
+        "${params.annotation}.${a}.annot.parquet",
+        "${params.annotation}.${a}.l2.ldscore.parquet",
+        "${params.annotation}.${a}.l2.M"
     ]
 }
 
-weight_file_prefix = file(weights_dict[1.toString()]).getBaseName()
-weights_dict.each { key, value -> weights_list.add(value) }
+ld_file_ch = Channel.fromPath("$params.ld/*").collect()
 
 workflow {
     // Step 1: Munge sumstats and store in parquet format for PolyFun
@@ -73,28 +64,30 @@ workflow {
     | munge_sumstats \
     | set { sumstats_munged_ch }
 
-    /* Steps 2 & 3: Calculate per SNP h2 using L2-regularized S-LDSC, 
-    partition SNPs into bins and compute LD scores per bin */
+    // Steps 2 & 3: Calculate per SNP h2 using L2-regularized S-LDSC, 
+    // partition SNPs into bins and compute LD scores per bin 
 
     Channel.of(1..22) \
+    | combine(Channel.of(params.annotation)) \
     | combine(annotations_ch, by: 0) \
+    | combine(Channel.of(params.weights)) \
     | combine(weights_ch, by: 0) \
     | combine(Channel.of(params.ld)) \
     | combine(Channel.of(params.polyfun_script)) \
     | combine(Channel.of(params.out)) \
     | combine(sumstats_munged_ch) \
-    | combine(ld_files_ch) \
+    | combine(ld_file_ch) \
     | compute_h2_L2_calc_ld \
     | set { per_snp_h2_bin_ld_ch }.collect()
 
-    /* Step 4: Re-calculate per SNP h2 using S-LDSC to use as priors for functional finemapping 
-    Write SNP prior weights for finemapping to launch directory */
+    // Step 4: Re-calculate per SNP h2 using S-LDSC to use as priors for functional finemapping 
+    // Write SNP prior weights for finemapping to launch directory 
 
     Channel.of(params.polyfun_script) \
     | combine(Channel.of(params.out)) \
     | combine(sumstats_munged_ch) \
-    | combine(Channel.of(weight_file_prefix)) \
-    | combine(Channel.fromList(weights_list).collect()) \
+    | combine(Channel.of(params.weights)) \
+    | combine(Cweight_file_ch) \
     | combine(per_snp_h2_bin_ld_ch) \
     | reestimate_snp_h2
 }
