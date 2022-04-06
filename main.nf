@@ -87,7 +87,7 @@ workflow {
     | combine(Channel.of(params.out)) \
     | combine(sumstats_munged_ch) \
     | combine(Channel.of(params.weights)) \
-    | combine(Cweight_file_ch) \
+    | combine(weight_file_ch) \
     | combine(per_snp_h2_bin_ld_ch) \
     | reestimate_snp_h2
 }
