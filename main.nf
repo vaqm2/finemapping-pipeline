@@ -16,6 +16,7 @@ def help_msg() {
     Options:
     --assoc <saige_results.assoc> [A file of association test results from the SAIGE mixed linear model analysis]
     --n <10000> [Sample size of the association analysis]
+    --bfile <HRC_chr> [Prefix of the chr seprated PLINK files to compute LD]
     --help [Prints this message]
     --out <my_out_prefix> [Prefix for output files]
     """
@@ -35,7 +36,7 @@ Sample Size   : $params.n
 Output Prefix : $params.out
 Annotations   : $params.annotation
 Weights       : $params.weights
-LD Cache      : $params.ld
+PLINK prefix  : $params.bfile
 =============================================================================
 """
 
@@ -52,7 +53,13 @@ annotations_ch = Channel.of(1..22) | map {
     ]
 }
 
-ld_file_ch = Channel.fromPath("$params.ld/*").collect()
+plink_file_ch = Channel.of(1..22) | map {
+    a -> [a,
+    "${params.bfile}${a}.bed",
+    "${params.bfile}${a}.bim",
+    "${params.bfile}${a}.fam"
+    ]
+}
 
 workflow {
     // Step 1: Munge sumstats and store in parquet format for PolyFun
@@ -72,11 +79,11 @@ workflow {
     | combine(annotations_ch, by: 0) \
     | combine(Channel.of(params.weights)) \
     | combine(weights_ch, by: 0) \
-    | combine(Channel.of(params.ld)) \
+    | combine(Channel.of(params.bfile)) \
+    | combine(Channel.of(plink_file_ch), by: 0) \
     | combine(Channel.of(params.polyfun_script)) \
     | combine(Channel.of(params.out)) \
     | combine(sumstats_munged_ch) \
-    | combine(ld_file_ch) \
     | compute_h2_L2_calc_ld \
     | set { per_snp_h2_bin_ld_ch }.collect()
 

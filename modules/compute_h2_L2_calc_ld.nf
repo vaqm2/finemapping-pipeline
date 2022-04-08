@@ -13,11 +13,13 @@ process compute_h2_L2_calc_ld {
         path(metrics_file),
         val(weight_files_prefix),
         path(weights_file),
-        val(ld_dir),
+        val(bfile_prefix),
+        path(bed),
+        path(bim),
+        path(fam),
         path(polyfun_script),
         val(out),
-        path(munged_sumstats),
-        path(ld_files)
+        path(munged_sumstats)
 
     output:
         tuple path("${out}.annot_coeff_ridge.${chr}.txt"), 
@@ -37,8 +39,7 @@ process compute_h2_L2_calc_ld {
             --ref-ld-chr ${annotation_files_prefix}. \
             --w-ld-chr ${weight_files_prefix}. \
             --ld-wind-kb 1000 \
-            --ld-ukb \
-            --ld-dir $ld_dir \
+            --bfile ${bfile_prefix}${chr} \
             --allow-missing \
             --chr $chr
         """
