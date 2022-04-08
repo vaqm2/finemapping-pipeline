@@ -80,7 +80,7 @@ workflow {
     | combine(Channel.of(params.weights)) \
     | combine(weights_ch, by: 0) \
     | combine(Channel.of(params.bfile)) \
-    | combine(Channel.of(plink_file_ch), by: 0) \
+    | combine(plink_file_ch, by: 0) \
     | combine(Channel.of(params.polyfun_script)) \
     | combine(Channel.of(params.out)) \
     | combine(sumstats_munged_ch) \
